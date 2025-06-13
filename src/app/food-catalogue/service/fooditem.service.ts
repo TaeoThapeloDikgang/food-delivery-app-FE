@@ -1,4 +1,4 @@
-import { API_URL_FC } from "./../../constants/url";
+import { K8ExternalIp } from "./../../constants/url";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
@@ -9,7 +9,7 @@ import { catchError } from "rxjs/operators";
 })
 export class FoodItemService {
   private apiUrl =
-    API_URL_FC + "/foodCatalogue/fetchRestaurantAndFoodItemsById/";
+    K8ExternalIp + "/foodCatalogue/fetchRestaurantAndFoodItemsById/";
 
   constructor(private http: HttpClient) {}
 

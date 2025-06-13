@@ -1,4 +1,4 @@
-import { API_URL_Order } from "./../../constants/url";
+import { K8ExternalIp } from "./../../constants/url";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
@@ -7,7 +7,7 @@ import { Observable, throwError } from "rxjs";
   providedIn: "root",
 })
 export class OrderService {
-  private apiUrl = API_URL_Order + "/order/saveOrder";
+  private apiUrl = K8ExternalIp + "/order/saveOrder";
 
   constructor(private http: HttpClient) {}
 
@@ -20,6 +20,7 @@ export class OrderService {
 
   saveOrder(data: any): Observable<any> {
     console.log("Data to be sent:", data);
+
     return this.http.post<any>(this.apiUrl, data);
   }
 
